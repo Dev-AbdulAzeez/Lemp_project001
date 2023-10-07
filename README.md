@@ -22,8 +22,6 @@ In summary, the first step is to ensure you have the necessary AWS account and s
 + Prior knowledge on how to link SSH into a virtual host
 
 
-
-
 ## **STEP 1 - Installing Nginx Web Server**
 
 ### _**Installing Nginx Web Server**_
@@ -70,11 +68,13 @@ To confirm what we just installed ,lets run
 
 `sudo mysql`
 
-![Alt text](mysql_version.png)
+![Alt text](mysql.png)
 
 Now, run the pre-installed MySQL security script to enhance security by eliminating insecure defaults and securing database access. Before executing the script, ensure you set a password for the root user, using 'mysql_native_password' as the default authentication method; for instance, we're defining this user's password as _**'PassWord'.1_**
 
 `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
+
+![Alt text](mysql_root.png)
 
 To exit _mysql_ mode,
 
@@ -96,7 +96,7 @@ To test if we are able to login to mysql console, run
 
 `sudo mysql -p mysql_username -u`
 
-
+![Alt text](mysql_root-1.png)
 ___
 
 ## **STEP 3 - Installing PHP**
@@ -321,57 +321,3 @@ You can now access this page in your web browser by visiting the domain name or 
 ![Alt text](image/ToDo.png)
 
 **OUR PHP ENVIRONMENT IS READY**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-> <IfModule mod_dir.c>
-        #Change this:
-        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
-        #To this:
-        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
-</IfModule>
-
-> After saving and closing the file, you will need to reload Apache so the changes take effect:
-
-`$ sudo systemctl reload apache2`
-
-> Finally, we will create a _PHP_ script to test that _PHP_ is correctly installed and configured on your server.
-Now that you have a custom location to host your website's files and folders, we'll create a _PHP_ test script to confirm that Apache is able to handle and process requests for _PHP_ files.
-
-`$ vim /var/www/projectlamp/index.php`
-
-> This will open a blank fle Add the following text which is valid PHP code inside the file This will open a blank file. Add the following text, which is valid PHP code, inside the file:
-
-`<?php phpinfo();`
-
-![Alt text](images/info_php.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
