@@ -62,19 +62,19 @@ Since this is our first time using apt for this session, start off by updating y
 
 `sudo apt install mysql`
 
-![Alt text](<MySql_installation.JPG>)
+![Alt text](<image/MySql_installation.JPG>)
 
 To confirm what we just installed ,lets run
 
 `sudo mysql`
 
-![Alt text](<mysql.JPG>)
+![Alt text](<image/mysql.JPG>)
 
 Now, run the pre-installed MySQL security script to enhance security by eliminating insecure defaults and securing database access. Before executing the script, ensure you set a password for the root user, using 'mysql_native_password' as the default authentication method; for instance, we're defining this user's password as _**'PassWord'.1_**
 
 `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
 
-![Alt text](<mysql_root.JPG>)
+![Alt text](<image/mysql_root.JPG>)
 
 To exit _mysql_ mode,
 
@@ -96,7 +96,7 @@ To test if we are able to login to mysql console, run
 
 `sudo mysql -p mysql_username -u`
 
-![Alt text](<mysql_root-1.JPG>)
+![Alt text](<image/mysql_root-1.JPG>)
 ___
 
 ## **STEP 3 - Installing PHP**
@@ -119,7 +119,7 @@ ___
 > Copyright (c) The PHP Group
 > Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
-![Alt text](<mysql_install.JPG>)
+![Alt text](image/mysql_version.JPG)
 
 ## **Step 4 - Configuring Nginx to Use PHP Processor**
 
@@ -186,7 +186,7 @@ server {
 
 `$ sudo nginx -t`
 
-![Alt text](<nginx_ok.JPG>)
+![Alt text](<image/nginx_ok.JPG>)
 
 > We also need to disable default Nginx host that is currently configured to listen on port 80, for this run:
 
@@ -206,7 +206,7 @@ Let now go to our browser and try to open your website URL using IP address:
 
 Here is what we got:
 
-![Alt text](<Host_name.JPG>)
+![Alt text](<image/Host_name.JPG>)
 
 ---
 
@@ -234,7 +234,7 @@ Once the nano file opens, type this _PHP_ valid code to return information about
 
 To confirm all we've done is correct, the below will be displayed
 
-![Alt text](<info_php.JPG>)
+![Alt text](<image/info_php.JPG>)
 
 >After checking the relevant information about our _PHP_ server through that page, it's best to remove the file you created as it contains sensitive information about your PHP environment and your Ubuntu server. You can use _rm_ command to remove that file:
 
@@ -283,7 +283,7 @@ The following command creates a new user named _example_user_ , using _mysql _na
 
 The following input will be given
 
-![Alt text](<SQL_database.JPG>)
+![Alt text](<image/SQL_database.JPG>)
 
 >Next, we'll create a test table named todo_list. From the _MySQL_ console, run the following statement:
 
@@ -299,7 +299,7 @@ The following input will be given
 
 The below output will be displayed
 
-![Alt text](</Users/machineee/Documents/LEMP_Project/image/ALL_TABLES.JPG>)
+![Alt text](<image/Users/machineee/Documents/LEMP_Project/image/ALL_TABLES.JPG>)
 
 After confirming we have a valid data in our table, let's exit the _MYSQL_ console 
 
@@ -313,7 +313,7 @@ After confirming we have a valid data in our table, let's exit the _MYSQL_ conso
 
 >Copy the below content into the _todo_list.php_ script:
 
-![Alt text](todo_list.JPG)
+![Alt text](image/todo_list.JPG)
 
 >Save and close the file when you are done editing.
 You can now access this page in your web browser by visiting the domain name or public IP address configured for your website, followed by `/todo_list.php`.
